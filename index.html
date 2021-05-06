@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Packet Trainer / TCP/UDP Assistant</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/datagram.css">
+    <link rel="stylesheet" href="css/countdown.css">
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>Gra w "statki" TCP/UDP</h1>
+            <p>Odkryj wszystkie pola datagramu.</p>
+        </header>
+        <nav>
+            <button type="button" name="start">start</button>
+            <button type="button" name="rematch" disabled>rewanż</button>
+            <button type="button" name="pause" disabled>zapauzuj</button>
+        </nav>
+        <section id="main">
+            <h2>Plan:</h2>
+            <ul>
+                <li>LVL-1: zbuduj pakiet</li>
+                <li>LVL-2: znajdź wskazany element w strukturze pakietu</li>
+                <li>LVL-3: jaki element znajduje się we wskazanej strukturze pakietu? element LUB znaczenie elementu LUB
+                    opcje elementu</li>
+            </ul>
+        </section>
+        <aside>
+            <div>
+                <output name="score">8</output>
+                <div style="margin: 1rem 0;">
+                    <h3>Zestrzel element</h3>
+                    <output name="target">element</output>
+                </div>
+                <hr>
+            </div>
+            <label>nazwa gracza: <output name="name">xyz</output></label>
+        </aside>
+        <footer>
+            <p>copyright &copy; 2021 2pt4</p>
+            <label>czas rozgrywki: <output name="time">8</output>s</label>
+        </footer>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

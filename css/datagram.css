@@ -1,0 +1,32 @@
+section#main.datagram {
+	display: grid;
+	grid-template-columns: 2fr repeat(32, 1fr);
+	grid-template-rows: repeat(7, 40px);
+	color: #000;
+}
+
+section#main.datagram div {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+section#main.datagram,
+section#main.datagram div {
+	border: 1px solid #000;
+	user-select: none;
+}
+
+section#main.datagram div.leading {
+	background-color: #c1dfe9;
+}
+
+section#main.datagram div:not(.leading) {
+	background-color: #f7f2e2;
+}
+
+section#main.datagram:not(.paused) div:not(.leading):empty:hover {
+	cursor: pointer;
+	background-color: #e4dfd1;
+}

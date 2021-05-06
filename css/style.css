@@ -1,0 +1,136 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #17181B;
+    color: #fff;
+    font-family: sans-serif;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+main {
+    display: grid;
+    grid-template:
+        "header menu" 100px
+        "main aside" minmax(220px, auto)
+        "footer footer" auto
+        / minmax(max-content, 960px) 200px;
+    gap: 0.5rem 1rem;
+    background-color: #282A2D;
+    padding: 1.5rem;
+    border-radius: 6px;
+}
+
+header {
+    grid-area: header;
+}
+
+nav {
+    grid-area: menu;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+nav button {
+    flex: 1;
+}
+
+nav button:not(:last-of-type) {
+    margin-bottom: 2px;
+}
+
+section#main {
+    grid-area: main;
+}
+
+section#main:not(.datagram) {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+section#main.paused {
+    opacity: 0.4;
+    filter: grayscale(1);
+}
+
+section#main ul {
+    list-style: none;
+}
+
+section#main ul>li {
+    margin: 0.5rem 0;
+}
+
+section#main:not(.datagram),
+aside {
+    background-color: #393c3f;
+    border-radius: 4px;
+}
+
+aside {
+    grid-area: aside;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    padding: 1rem;
+    text-align: center;
+}
+
+aside output[name="score"] {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 24pt;
+    font-weight: bold;
+    display: inline-block;
+    background-color: #49b6ff;
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+    position: relative;
+}
+
+aside output[name="score"]::after {
+    content: "/11";
+    position: absolute;
+    bottom: 0.25rem;
+    right: -1.5rem;
+    font-size: 16pt;
+    background-color: #49b6ff;
+    padding: 0.25rem;
+    border-radius: 0 4px 4px 0;
+}
+
+aside hr {
+    border: 1px solid #90cffa;
+    padding: 1px;
+    background-color: #90cffa;
+    border-radius: 8px;
+}
+
+aside output[name="name"] {
+    font-style: italic;
+}
+
+footer {
+    grid-area: footer;
+    display: flex;
+    flex-flow: row-reverse wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+header p,
+section#main li,
+aside label,
+footer * {
+    color: rgba(255, 255, 255, 0.85);
+}
